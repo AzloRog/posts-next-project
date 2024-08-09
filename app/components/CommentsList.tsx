@@ -12,7 +12,7 @@ const getComments = async (postId: string): Promise<Post[]> => {
   );
 
   if (!res.ok) {
-    throw new Error("Error");
+    throw new Error("Error, can't get data from api");
   }
   return await res.json();
 };

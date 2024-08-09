@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import fetchDataLength from "../lib/fetchDataLength";
 import { useEffect, useState } from "react";
 
-const Pagination = ({ count }: { count: number }) => {
+const Pagination = () => {
   const [pagesCount, setPagesCount] = useState(0);
   const router = useRouter();
   const searchParams = useSearchParams();

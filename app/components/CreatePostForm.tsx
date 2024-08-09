@@ -21,6 +21,9 @@ const createInvoice = async (formData: FormData) => {
       },
     }
   );
+  if (!res.ok) {
+    throw new Error("Error, can't post data to api");
+  }
   const resData = await res.json();
   console.log(resData);
 
