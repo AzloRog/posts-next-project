@@ -1,5 +1,4 @@
 import { Post } from "@/app/constants/database";
-
 import { Paper } from "@mui/material";
 
 interface Props {
@@ -23,7 +22,7 @@ const CommentsList = async ({ id }: Props) => {
   return (
     <ul className="flex flex-col gap-8 w-[860px] m-auto">
       {comments.map((item) => (
-        <li key={item.id} className="">
+        <li key={item.id}>
           <Paper elevation={2} className="p-4">
             {item.text}
           </Paper>

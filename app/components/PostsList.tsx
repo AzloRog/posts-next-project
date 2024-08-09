@@ -12,7 +12,12 @@ const getData = async (
       currentPage +
       "&perPage=" +
       perPage,
-    { next: { revalidate: Number(process.env.REVALIDATE_TIMER) } }
+    {
+      next: {
+        revalidate: Number(process.env.REVALIDATE_TIMER),
+        tags: ["posts"],
+      },
+    }
   );
 
   if (!res.ok) {
@@ -35,7 +40,7 @@ const PostsList = async ({
     <div>
       <ul className="grid gap-4">
         {data.map((item) => (
-          <li>
+          <li key={item.id}>
             <PostCard {...item} />
           </li>
         ))}

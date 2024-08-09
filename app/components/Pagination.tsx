@@ -11,7 +11,6 @@ const Pagination = ({ count }: { count: number }) => {
 
   const page = searchParams.get("page") ?? "1";
   const perPage = searchParams.get("perPage") ?? "10";
-  console.log(count);
 
   useEffect(() => {
     const getDataLength = async () => {

@@ -1,4 +1,5 @@
 import PostsList from "./components/PostsList";
+import CreatePostForm from "./components/CreatePostForm";
 const Home = ({
   searchParams,
 }: {
@@ -10,6 +11,9 @@ const Home = ({
     <section className="container">
       <h1 className="text-6xl text-center mb-12">Posts List</h1>
       <PostsList currentPage={currentPage} perPage={perPage} />
+      <div className="mt-10">
+        <CreatePostForm />
+      </div>
     </section>
   );
 };

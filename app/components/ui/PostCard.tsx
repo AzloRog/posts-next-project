@@ -1,14 +1,8 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Card, CardActions, CardContent, Typography } from "@mui/material";
 import Link from "next/link";
 
 interface Props {
-  id: number;
+  id: string;
   title: string;
   text: string;
   imageUrl: string;
