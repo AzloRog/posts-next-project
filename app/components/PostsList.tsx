@@ -1,9 +1,17 @@
 import PostCard from "./ui/PostCard";
 import { Post } from "../constants/database";
+import Pagination from "../components/Pagination";
 
-async function getData() {
+const getData = async (
+  currentPage: string,
+  perPage: string
+): Promise<Post[]> => {
   const res = await fetch(
-    "https://my-json-server.typicode.com/AzloRog/fake-api/posts",
+    process.env.MAIN_URL +
+      "/api/posts?page=" +
+      currentPage +
+      "&perPage=" +
+      perPage,
     { next: { revalidate: Number(process.env.REVALIDATE_TIMER) } }
   );
 
@@ -13,19 +21,29 @@ async function getData() {
   }
 
   return res.json();
-}
+};
 
-const PostsList = async () => {
-  const data = (await getData()) as Post[];
+const PostsList = async ({
+  currentPage,
+  perPage,
+}: {
+  currentPage: string;
+  perPage: string;
+}) => {
+  const data = await getData(currentPage, perPage);
   return (
-    <ul className="grid gap-4">
-      {data.map((item) => (
-        <li>
-          <PostCard {...item} />
-        </li>
-      ))}
-      <button>refresh</button>
-    </ul>
+    <div>
+      <ul className="grid gap-4">
+        {data.map((item) => (
+          <li>
+            <PostCard {...item} />
+          </li>
+        ))}
+      </ul>
+      <div className="mt-16 flex justify-center">
+        <Pagination count={Math.ceil(data.length / Number(perPage))} />
+      </div>
+    </div>
   );
 };
 
