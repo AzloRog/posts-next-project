@@ -19,4 +19,4 @@ https://my-json-server.typicode.com/AzloRog/fake-api/ - fakeAPI
 
 api endpoints разделены т.е. `comments` и `posts` отдельные ендпоинты, каждый `comment` имеет поле `postId` с `id` поста которому он принадлежит
 
-Позже дополню ещё по каким либо моментам.
+Возможно дополню ещё по каким либо моментам.
