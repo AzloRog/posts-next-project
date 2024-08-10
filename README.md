@@ -1,5 +1,6 @@
 https://posts-next-ntcjeyq7g-danis-projects-0a8c7752.vercel.app/  - vercel
 
+https://my-json-server.typicode.com/AzloRog/fake-api/ - fakeAPI
 
 Комментов много к постам не добавлял, в посте номер 2 и 3 только есть.
 
