@@ -1,6 +1,4 @@
-ФУНКЦИЯ `getData` в файле `PostsList` ТЕСТОВАЯ И НИКАК НЕ ИСПОЛЬЗУЕТСЯ, ЗАБЫЛ УДАЛИТЬ ДО ИСТЕЧЕНИЯ СРОКОВ ВЫПОЛНЕНИЯ ТЗ.
-
-https://posts-next-ntcjeyq7g-danis-projects-0a8c7752.vercel.app/  - vercel
+https://posts-next-app-seven.vercel.app/  - vercel
 
 https://my-json-server.typicode.com/AzloRog/fake-api/ - fakeAPI
 
