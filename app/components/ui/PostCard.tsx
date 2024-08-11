@@ -6,8 +6,9 @@ interface Props {
   title: string;
   text: string;
   imageUrl: string;
+  queryPageInfo: { page: string; perPage: string };
 }
-const PostCard = ({ id, title, text, imageUrl }: Props) => {
+const PostCard = ({ id, title, text, imageUrl, queryPageInfo }: Props) => {
   return (
     <Card className="pt-8 pb-4 px-8">
       <CardContent>
@@ -20,7 +21,10 @@ const PostCard = ({ id, title, text, imageUrl }: Props) => {
       </CardContent>
       <CardActions className="flex justify-end pt-3">
         <Link
-          href={{ pathname: `/post/${id}`, query: { title, text, imageUrl } }}
+          href={{
+            pathname: `/post/${id}`,
+            query: { ...queryPageInfo, title, text, imageUrl },
+          }}
         >
           Подробнее
         </Link>

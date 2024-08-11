@@ -15,7 +15,10 @@ const PostsList = async ({
       <ul className="grid gap-4">
         {data.map((item) => (
           <li key={item.id}>
-            <PostCard {...item} />
+            <PostCard
+              {...item}
+              queryPageInfo={{ page: currentPage, perPage }}
+            />
           </li>
         ))}
       </ul>

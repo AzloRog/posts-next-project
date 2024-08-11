@@ -11,9 +11,15 @@ const PostInfo = () => {
   const text = searchParams.get("text");
   const imageUrl = searchParams.get("imageUrl");
 
+  const page = searchParams.get("page") ?? "1";
+  const perPage = searchParams.get("perPage") ?? "10";
+
   return (
     <Paper elevation={3} className="mt-32 pt-12 px-8 pb-8 relative">
-      <Link href="/" className="absolute top-4 left-4">
+      <Link
+        href={`/?page=${page}&perPage=${perPage}`}
+        className="absolute top-4 left-4"
+      >
         <ArrowBackIcon />
       </Link>
 
