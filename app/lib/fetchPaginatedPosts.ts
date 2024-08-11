@@ -5,7 +5,13 @@ const fetchPaginatedPosts = async (
   perPage: string
 ): Promise<Post[]> => {
   const res = await fetch(
-    "https://my-json-server.typicode.com/AzloRog/fake-api/posts"
+    "https://my-json-server.typicode.com/AzloRog/fake-api/posts",
+    {
+      next: {
+        revalidate: Number(process.env.REVALIDATE_TIMER),
+        tags: ["posts"],
+      },
+    }
   );
 
   if (!res.ok) {
